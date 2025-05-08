@@ -1,0 +1,32 @@
+.sidemenu {
+    width: 240px;
+    box-shadow: 8px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-link {
+    color: #333;
+    transition: background 0.2s, border-radius 0.2s;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin: 1px 12px; 
+    display: block;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: #393fe1;
+    font-weight: 500;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .sidemenu .text-center img.fill-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .sidemenu .user-info {
+    background-color: #f4f4f4;
+  }
+  
