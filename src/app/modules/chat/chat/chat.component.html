@@ -1,0 +1,47 @@
+<div class="parent">
+    <div class="div1 me-4 ms-3 mt-3 bg-white shadow-sm rounded p-4">
+        <div class="row border-bottom p-1">
+            <div class="col d-flex align-items-center">
+                <div class="user d-flex align-items-center">
+                    <div class="img">
+                        <img src="assects/user.png" class="rounded-4" width="40" height="40" alt="">
+                    </div>
+                    <div class="name ms-2 d-flex flex-column">
+                        <strong>Jane Doe</strong>
+                        <span>Online <span>Time</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-end">
+                <div class="label">
+                    <a href="">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="div2 me-4 ms-3">2</div>
+    </div>
+
+    <div class="div3 mt-3">
+        <div class="col-12 div1 text-start">
+            <strong class="text-muted">Chat Request</strong>
+        </div>
+        <div class="request border-bottom d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="assects/user.png" class="rounded-4" width="40" height="40" alt="">
+                <div class="ms-3">
+                    <span class="text-muted">Alex George</span><br>
+                    <strong>Dr. Ria Micheal</strong>
+                </div>
+            </div>
+            <div class="text-end">
+                <p class="text-muted mb-1">12 September 2022</p>
+                <p class="px-2 py-1 rounded-pill d-inline-block" [ngStyle]="status === 'Pending' 
+      ? {'background-color': 'rgba(220, 53, 69, 0.15)', 'color': '#dc3545'} 
+      : {'background-color': 'rgba(40, 167, 69, 0.15)', 'color': '#28a745'}">
+                    {{ status }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
