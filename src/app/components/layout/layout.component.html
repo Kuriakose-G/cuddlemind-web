@@ -1,8 +1,14 @@
 <div class="d-flex vh-100">
+  <div class="flex-column bg-white vh-100 shadow-sm sidemenu" [ngClass]="{
+      'd-none': !showSidebar && !isLargeScreen(),
+      'd-flex': showSidebar || isLargeScreen()
+    }">
     <app-sidemenu></app-sidemenu>
+  </div>
+
   <div class="flex-grow-1 d-flex flex-column">
-      <app-header></app-header>
-    <div class="flex-grow-1 p-0 overflow-auto">
+    <app-header (toggle)="toggleSidebar()"></app-header>
+    <div class="flex-grow-1 overflow-auto">
       <router-outlet></router-outlet>
     </div>
   </div>
