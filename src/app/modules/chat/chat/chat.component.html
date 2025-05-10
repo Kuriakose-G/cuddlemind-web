@@ -19,7 +19,31 @@
             </div>
         </div>
 
-        <div class="div2 me-4 ms-3">2</div>
+        <div class="div2 me-4 ms-3 d-flex flex-column">
+            <div class="chat-box flex-grow-1 d-flex flex-column justify-content-end">
+                <ng-container *ngFor="let group of groupedMessages()">
+                    <div class="date-label">{{ group.dateLabel }}</div>
+                    <div class="message-container">
+                        <div *ngFor="let msg of group.messages" class="message"
+                            [ngClass]="msg.sender === 'me' ? 'sent' : 'received'">
+                            <p>{{ msg.text }}</p>
+                            <small class="text-muted d-block mt-2 text-end" *ngIf="msg.sender === 'me'">
+                                {{ msg.timestamp | date: 'shortTime' }}
+                            </small>
+                            <small class="text-muted d-block mt-2 text-start" *ngIf="msg.sender !== 'me'">
+                                {{ msg.timestamp | date: 'shortTime' }}
+                            </small>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="chat-input mt-2">
+                <input type="text" class="form-control" (keydown)="onKeyPress($event)"
+                    placeholder="Type your message..." [(ngModel)]="newMessage">
+                <button class="btn btn-primary ms-2" (click)="sendMessage()">Send</button>
+            </div>
+        </div>
+
     </div>
 
     <div class="div3 mt-3">
