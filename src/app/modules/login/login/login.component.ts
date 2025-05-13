@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertService } from '../../../shared/components/alert/service/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -8,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  constructor(
+    private alertService: AlertService
+  ) { }
+
+  login() {
+    this.alertService.showAlert({
+      message: 'Working Properly',
+      type: 'success',
+      autoDismiss: true,
+      duration: 4000
+    })
+  }
 }
