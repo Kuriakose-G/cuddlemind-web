@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
+import { LoginComponent } from './modules/login/login/login.component';
 
 const dashboardModule = () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
 const plansModule = () => import('./modules/plans/plans.module').then(m => m.PlansModule)
@@ -12,10 +13,9 @@ export const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', loadChildren: dashboardModule },
             { path: 'plans', loadChildren: plansModule },
-            { path: 'chat', loadChildren: chatModule }
+            { path: 'chat', loadChildren: chatModule },
         ]
     },
-    {
-        path: '**', redirectTo: 'dashboard'
-    }
+    { path: 'login', component: LoginComponent },
+    { path: '**', redirectTo: 'dashboard' }
 ];
