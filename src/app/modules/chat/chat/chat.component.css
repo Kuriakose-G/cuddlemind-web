@@ -33,6 +33,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 500px;
+    display: block !important;
 }
 
 .date-label {
