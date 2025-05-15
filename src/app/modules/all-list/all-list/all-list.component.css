@@ -1,0 +1,32 @@
+.custom-search-input {
+  max-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-search-input .form-control {
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+}
+
+.custom-search-input .input-group-text {
+  border-radius: 8px 0 0 8px;
+}
+
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: 2px solid #ced4da;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.table thead th {
+  border: none !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

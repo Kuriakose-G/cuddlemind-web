@@ -1,0 +1,21 @@
+<div class="container-fluid py-4">
+  <div class="bg-white rounded shadow-lg">
+    <div class="parent">
+      <div class="div1">
+        <ul class="tab-list">
+          <li [class.active]="selectedList === 'All'" (click)="selectList('All')">All</li>
+          <li [class.active]="selectedList === 'Doctor'" (click)="selectList('Doctor')">Doctors</li>
+          <li [class.active]="selectedList === 'Staffs'" (click)="selectList('Staffs')">Staffs</li>
+          <li [class.active]="selectedList === 'Users'" (click)="selectList('Users')">Users</li>
+        </ul>
+      </div>
+
+      <div class="div2 pt-3">
+        <app-all-list *ngIf="selectedList === 'All'"></app-all-list>
+        <app-doctor-list *ngIf="selectedList === 'Doctor'"></app-doctor-list>
+        <app-staffslist *ngIf="selectedList === 'Staffs'"></app-staffslist>
+        <app-users-list *ngIf="selectedList === 'Users'"></app-users-list>
+      </div>
+    </div>
+  </div>
+</div>
