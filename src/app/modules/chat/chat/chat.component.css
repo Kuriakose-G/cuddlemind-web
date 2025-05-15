@@ -129,6 +129,30 @@
     margin-left: 12px;
 }
 
+.plus-btn {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-btn i {
+    font-size: 1.2rem;
+}
+
+.plus-icon i {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.tooltip-inner {
+  font-size: 0.85rem;
+  background-color: #000;
+}
+
 @media (max-width: 991.98px) {
     .parent {
         grid-template-columns: 1fr;

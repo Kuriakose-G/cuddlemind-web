@@ -37,9 +37,16 @@
                     </div>
                 </ng-container>
             </div>
-            <div class="chat-input mt-2">
-                <input type="text" class="form-control" (keydown)="onKeyPress($event)"
-                    placeholder="Type your message..." [(ngModel)]="newMessage">
+            <div class="chat-input mt-2 d-flex align-items-center">
+                <div class="input-group">
+                    <span class="input-group-text plus-icon" data-bs-toggle="tooltip" title="Add files" aria-label="Add file" role="button" (click)="triggerFileInput()" style="cursor: pointer;">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                    <input type="file" hidden #fileInput (change)="handleFileUpload($event)">
+
+                    <input type="text" class="form-control" (keydown)="onKeyPress($event)"
+                        placeholder="Type your message..." [(ngModel)]="newMessage">
+                </div>
                 <button class="btn btn-primary ms-2" (click)="sendMessage()">Send</button>
             </div>
         </div>

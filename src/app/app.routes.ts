@@ -5,6 +5,7 @@ import { LoginComponent } from './modules/login/login/login.component';
 const dashboardModule = () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
 const plansModule = () => import('./modules/plans/plans.module').then(m => m.PlansModule)
 const chatModule = () => import('./modules/chat/chat.module').then(m => m.ChatModule)
+const allListModule = () => import('./modules/all-list/all-list.module').then(m => m.AllListModule)
 
 export const routes: Routes = [
     {
@@ -14,6 +15,7 @@ export const routes: Routes = [
             { path: 'dashboard', loadChildren: dashboardModule },
             { path: 'plans', loadChildren: plansModule },
             { path: 'chat', loadChildren: chatModule },
+            { path: 'alllist', loadChildren: allListModule }
         ]
     },
     { path: 'login', component: LoginComponent },

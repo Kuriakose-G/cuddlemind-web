@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-chat',
@@ -8,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css'
 })
-export class ChatComponent {
+export class ChatComponent implements AfterViewInit{
   status: string = 'Completed'
   messages = [
     {
@@ -29,6 +30,16 @@ export class ChatComponent {
   ];
 
   newMessage = '';
+  @ViewChild('fileInput') fileInput!: ElementRef;
+
+  ngAfterViewInit(): void {
+    const tooltipTriggerList = Array.from(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    tooltipTriggerList.forEach(tooltipEl => {
+      new bootstrap.Tooltip(tooltipEl);
+    });
+  }
 
   groupedMessages() {
     const groups: { [key: string]: any[] } = {};
@@ -66,6 +77,18 @@ export class ChatComponent {
   onKeyPress(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       this.sendMessage();
+    }
+  }
+
+  triggerFileInput() {
+    this.fileInput.nativeElement.click();
+  }
+
+  handleFileUpload(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (file) {
+      console.log('File selected:', file);
+      // Handle file upload logic here
     }
   }
 }
