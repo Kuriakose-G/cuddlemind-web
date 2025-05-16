@@ -1,0 +1,74 @@
+<div class="container-fluid py-3">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5>Bookings</h5>
+        <div class="d-flex gap-2">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="fas fa-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0" placeholder="Search" />
+            </div> <button class="btn btn-outline-secondary">Filter</button>
+            <button class="btn btn-outline-secondary">Share</button>
+            <select class="form-select w-auto">
+                <option selected>Bulk Action</option>
+                <option value="1">Delete</option>
+                <option value="2">Export</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th><input type="checkbox" class="form-check-input custom-checkbox" /></th>
+                    <th>Patient Name</th>
+                    <th>Email</th>
+                    <th>Doctor Name</th>
+                    <th>Booked Type</th>
+                    <th>Booked Date</th>
+                    <th>Date Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let booking of mockBookings">
+                    <td><input type="checkbox" class="form-check-input custom-checkbox" /></td>
+                    <td>{{ booking.name }}</td>
+                    <td>{{ booking.email }}</td>
+                    <td>{{ booking.doctor }}</td>
+                    <td>{{ booking.mode }}</td>
+                    <td>{{ booking.bookedDate }}</td>
+                    <td>{{ booking.dateTime }}</td>
+                    <td>
+                        <p class="px-2 rounded-pill d-inline-block" [ngStyle]="booking.status === 'InActive' 
+      ? {'background-color': 'rgba(220, 53, 69, 0.15)', 'color': '#dc3545'} 
+      : {'background-color': 'rgba(40, 167, 69, 0.15)', 'color': '#28a745'}">
+                            {{ booking.status }}
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-between align-items-center mt-1">
+        <div class="d-flex align-items-center">
+            <select class="form-select w-auto">
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+            <span class="ms-2">Items per page</span>
+        </div>
+        <div>
+            <span>1-10 of 200 items</span>
+            <button class="btn btn-outline-secondary btn-sm mx-2" disabled>‹</button>
+            <span>1 of 44 pages</span>
+            <button class="btn btn-outline-secondary btn-sm ms-2">›</button>
+        </div>
+    </div>
+</div>

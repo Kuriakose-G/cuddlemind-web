@@ -1,0 +1,29 @@
+table th {
+    cursor: default;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    border: 2px solid #ced4da;
+}
+
+table th,
+table td {
+    border: none !important;
+}
+
+table {
+    border-bottom: 1px solid #dee2e6;
+}
+
+table th,
+table td {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+table td {
+    font-size: 0.95rem;
+}
