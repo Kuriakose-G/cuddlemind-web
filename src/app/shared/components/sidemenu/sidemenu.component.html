@@ -3,14 +3,14 @@
     <img src="assects/logo.png" alt="Logo" class="img-fluid fill-image" width="120">
   </div>
   <nav class="nav flex-column mt-1">
-    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"><i class="far fa-chart-bar me-2"></i>
+    <a class="nav-link" (click)="navigate('/dashboard')" routerLinkActive="active"><i class="far fa-chart-bar me-2"></i>
       Dashboard</a>
-    <a class="nav-link" routerLink="/users" routerLinkActive="active"><i class="far fa-user me-2"></i> Users</a>
-    <a class="nav-link" routerLink="/bookings" routerLinkActive="active"><i class="far fa-calendar-alt me-2"></i>
+    <a class="nav-link" (click)="navigate('/alllist')" routerLinkActive="active"><i class="far fa-user me-2"></i> Users</a>
+    <a class="nav-link" (click)="navigate('/bookings')" routerLinkActive="active"><i class="far fa-calendar-alt me-2"></i>
       Bookings</a>
-    <a class="nav-link" routerLink="/plans" routerLinkActive="active"><i class="far fa-folder-open me-2"></i> Plans</a>
-    <a class="nav-link mt-auto" routerLink="/settings" routerLinkActive="active"><i class="fas fa-cog me-2"></i>
-      Settings</a>
+    <a class="nav-link" (click)="navigate('/plans')" routerLinkActive="active"><i class="far fa-folder-open me-2"></i> Plans</a>
+    <a class="nav-link mt-auto" (click)="navigate('/chat')" routerLinkActive="active"><i class="fa-regular fa-message"></i>
+      Chat</a>
   </nav>
   <div class="mt-auto p-3 border-top small text-muted user-info d-flex align-items-center">
     <img src="assects/user.png" class="rounded-circle me-2" width="32" height="32" alt="User">
