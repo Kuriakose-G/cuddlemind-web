@@ -9,11 +9,19 @@ import { Router } from '@angular/router';
   styleUrl: './sidemenu.component.css'
 })
 export class SidemenuComponent {
+  currentRoute = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url;
+    });
+  }
 
   navigate(path: string) {
     this.router.navigate([path]);
   }
 
+    isActive(path: string): boolean {
+    return this.currentRoute === path;
+  }
 }
