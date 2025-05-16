@@ -8,7 +8,7 @@ import { DashboardRoutingModule } from './dashboard-routing/dashboard-routing.mo
   declarations: [],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
   ]
 })
 export class DashboardModule { }

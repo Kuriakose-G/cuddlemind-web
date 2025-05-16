@@ -17,3 +17,11 @@
   .div8 {
       min-height: 200px;
   }
+
+  .card .small {
+      font-size: 0.75rem;
+  }
+
+  canvas {
+      max-height: 200px;
+  }

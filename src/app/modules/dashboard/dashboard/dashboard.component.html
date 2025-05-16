@@ -69,8 +69,129 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-3 div6 bg-light">6</div>
-        <div class="col-12 col-lg-6 div8 bg-light">8</div>
-        <div class="col-12 col-lg-3 div7 bg-light">7</div>
+        <div class="col-12 col-lg-3 div6">
+            <div class="p-3">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <strong>Marketting</strong>
+                    <div class="dropdown">
+                        <button class="btn btn-sm text-muted dropdown-toggle border-0 bg-transparent shadow-none"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            This Week
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Week</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 mb-3 small">
+                    <div class="d-flex align-items-center">
+                        <div class="me-2"
+                            style="width: 10px; height: 10px; background-color: #3B82F6; border-radius: 50%;">
+                        </div>
+                        <span>Users</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-2"
+                            style="width: 10px; height: 10px; background-color: #A78BFA; border-radius: 50%;">
+                        </div>
+                        <span>Chats</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-2"
+                            style="width: 10px; height: 10px; background-color: #FACC15; border-radius: 50%;">
+                        </div>
+                        <span>Bookings</span>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType"
+                    [options]="{plugins: { legend: { display: false } } }">
+                </canvas>
+
+            </div>
+        </div>
+
+
+        <div class="col-12 col-lg-6 div8">
+            <div class="rounded-4 p-3">
+                <div class="bg-primary text-white rounded-4 p-3 mb-4 position-relative">
+                    <div>
+                        <div class="bg-white bg-opacity-25 p-2 rounded-3 d-inline-block mb-3">
+                            <i class="fa-solid fa-folder" style="font-size: 20px;"></i>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <div>
+                                <p class="mb-1 small">Total Chats</p>
+                                <h5 class="fw-bold">45</h5>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-1 me-4 small">Bookings</p>
+                                <h5 class="fw-bold">32 <span class="small text-success">+24%</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Cart Icon and Stats with Dropdown -->
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="bg-warning bg-opacity-25 p-2 rounded-3 d-inline-block mb-3">
+                            <i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-sm text-muted dropdown-toggle border-0 bg-transparent shadow-none"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                This Week
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Week</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <p class="text-danger small mb-1">Booking Ratio</p>
+                            <h5 class="fw-bold mb-0">20%</h5>
+                            <span class="text-success small">+0.00%</span>
+                        </div>
+                        <div class="text-end">
+                            <p class="text-muted small mb-1">Plan Purchase</p>
+                            <h5 class="fw-bold mb-0">30</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-3 div7">
+            <div class="col-12 text-start">
+                <strong class="text-muted">Recent Bookings</strong>
+            </div>
+            <div class="request border-bottom d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="assects/user.png" class="rounded-4" width="40" height="40" alt="">
+                    <div class="ms-3">
+                        <span class="text-muted">Alex George</span><br>
+                        <strong>Dr. Ria Micheal</strong>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <p class="text-muted mb-1">12 September 2022</p>
+                    <p class="px-2 py-1 rounded-pill d-inline-block" [ngStyle]="status === 'Pending' 
+      ? {'background-color': 'rgba(220, 53, 69, 0.15)', 'color': '#dc3545'} 
+      : {'background-color': 'rgba(40, 167, 69, 0.15)', 'color': '#28a745'}">
+                        {{ status }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
