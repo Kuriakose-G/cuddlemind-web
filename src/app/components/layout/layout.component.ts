@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { HeaderComponent } from "../../shared/components/header/header.component";
 import { SidemenuComponent } from "../../shared/components/sidemenu/sidemenu.component";
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,7 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
-  showSidebar:boolean = false;
+  showSidebar: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd && !this.isLargeScreen()) {
+        this.showSidebar = false;
+      }
+    });
+  }
 
   toggleSidebar() {
     this.showSidebar = !this.showSidebar;

@@ -1,7 +1,9 @@
 .sidemenu {
   width: 240px;
   box-shadow: 8px 0 10px rgba(0, 0, 0, 0.1);
-}
+  transition: transform 0.3s ease-in-out;
+  z-index: 1050;
+} 
 
 .nav-link {
   color: #333;
@@ -29,4 +31,34 @@
 
 .sidemenu .user-info {
   background-color: #f4f4f4;
+}
+
+button.btn-outline-secondary {
+  border: none;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 991.98px) {
+  .sidemenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 8px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidemenu.d-none {
+    display: none !important;
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1049;
+  }
 }

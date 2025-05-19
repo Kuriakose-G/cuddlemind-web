@@ -3,8 +3,10 @@
       'd-none': !showSidebar && !isLargeScreen(),
       'd-flex': showSidebar || isLargeScreen()
     }">
-    <app-sidemenu></app-sidemenu>
+    <app-sidemenu (close)="toggleSidebar()"></app-sidemenu>
   </div>
+
+  <div *ngIf="showSidebar && !isLargeScreen()" class="backdrop" (click)="toggleSidebar()"></div>
 
   <div class="flex-grow-1 d-flex flex-column">
     <app-header (toggle)="toggleSidebar()"></app-header>
