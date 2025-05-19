@@ -18,6 +18,7 @@
   font-weight: 500;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .sidemenu .text-center img.fill-image {

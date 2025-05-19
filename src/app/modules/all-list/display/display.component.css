@@ -1,20 +1,25 @@
 .parent {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.container-fluid {
+  min-height: 100vh;
+  padding: 4 !important;
+}
+
+.bg-white {
+  height: 100%;
 }
 
 .div1 {
-    grid-column: span 5 / span 5;
-    border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .div2 {
-    grid-column: span 5 / span 5;
-    grid-row: span 4 / span 4;
-    grid-row-start: 2;
+  overflow-y: auto;
+  padding-top: 1rem;
 }
 
 .tab-list {

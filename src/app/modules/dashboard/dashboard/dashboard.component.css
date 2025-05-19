@@ -1,27 +1,27 @@
-  .card-box {
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
+ .card-box {
+     padding: 1rem;
+     border-radius: 8px;
+     text-align: center;
+     margin-top: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
 
-  .div1 {
-      font-size: 1.2rem;
-  }
+ .div1 {
+     font-size: 1.2rem;
+ }
 
-  .div6,
-  .div7,
-  .div8 {
-      min-height: 200px;
-  }
+ .div6,
+ .div7,
+ .div8 {
+     min-height: 200px;
+ }
 
-  .card .small {
-      font-size: 0.75rem;
-  }
+ .card .small {
+     font-size: 0.75rem;
+ }
 
-  canvas {
-      max-height: 200px;
-  }
+ canvas {
+     max-height: 200px;
+ }

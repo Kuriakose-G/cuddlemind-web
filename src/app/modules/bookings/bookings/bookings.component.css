@@ -27,3 +27,15 @@ table td {
 table td {
     font-size: 0.95rem;
 }
+
+@media (max-width: 600px) {
+    .table-responsive {
+        min-height: 0;
+    }
+
+    table td,
+    table th {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
