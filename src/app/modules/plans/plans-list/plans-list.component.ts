@@ -73,7 +73,6 @@ export class PlansListComponent {
 
   onSave(modal: any) {
     if (this.planForm.valid) {
-      console.log('Form Value:', this.planForm.value);
       const newPlan = this.planForm.value;
       this.plans.push(newPlan);
 

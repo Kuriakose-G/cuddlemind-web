@@ -109,7 +109,11 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" (click)="close()">Cancel</button>
-        <button type="button" class="btn btn-primary" (click)="onSave(modal)"
-            [disabled]="userForm.invalid">Save</button>
+        <button type="button" class="btn btn-primary" (click)="onSave(modal)" [disabled]="userForm.invalid || loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            <span *ngIf="!loading"><i class="fa-regular fa-save me-2"></i>Save</span>
+            <span *ngIf="loading">Saving...</span>
+        </button>
+
     </div>
 </ng-template>

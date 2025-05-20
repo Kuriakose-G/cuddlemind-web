@@ -12,6 +12,7 @@ import { AlertService } from '../../../shared/components/alert/service/alert.ser
 })
 export class AllListComponent {
   userForm: FormGroup;
+  loading = false;
 
   users: any[] = [
     {
@@ -60,7 +61,8 @@ export class AllListComponent {
 
   onSave(modal: any) {
     if (this.userForm.valid) {
-      console.log('Form Value:', this.userForm.value);
+      this.loading = true;
+
       const newPlan = this.userForm.value;
       this.users.push(newPlan);
 
@@ -72,6 +74,7 @@ export class AllListComponent {
       })
 
       this.userForm.reset();
+      this.loading = false;
       modal.close('Save click');
     } else {
       this.userForm.markAllAsTouched();
@@ -80,6 +83,7 @@ export class AllListComponent {
 
   close() {
     this.userForm.reset()
+    this.loading = false;
     this.modalService.dismissAll()
   }
 }
